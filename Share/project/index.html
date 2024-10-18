@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia sẻ tài liệu học tập</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input[type="file"], select, button {
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e7f3e7;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chia sẻ tài liệu học tập</h1>
+    </header>
+
+    <!-- Phần dành cho giảng viên upload tài liệu -->
+    <section id="upload-section">
+        <h2>Tải tài liệu lên</h2>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="course">Chọn môn học:</label>
+            <select id="course" name="course">
+                <option value="math101">Toán học 101</option>
+                <option value="cs201">Khoa học máy tính 201</option>
+                <option value="phys301">Vật lý 301</option>
+            </select>
+
+            <label for="file-type">Loại tài liệu:</label>
+            <select id="file-type" name="file-type">
+                <option value="lecture">Bài giảng</option>
+                <option value="assignment">Bài tập</option>
+                <option value="reference">Tài liệu tham khảo</option>
+            </select>
+
+            <label for="file">Chọn file:</label>
+            <input type="file" id="file" name="file">
+
+            <button type="submit">Tải lên</button>
+        </form>
+    </section>
+
+    <!-- Phần dành cho sinh viên xem tài liệu đã chia sẻ -->
+    <section id="course-materials">
+        <h2>Tài liệu học tập</h2>
+        <label for="student-course">Chọn môn học:</label>
+        <select id="student-course" name="student-course" onchange="loadFiles(this.value)">
+            <option value="math101">Toán học 101</option>
+            <option value="cs201">Khoa học máy tính 201</option>
+            <option value="phys301">Vật lý 301</option>
+        </select>
+
+        <!-- Danh sách tài liệu theo môn học -->
+        <div id="file-list">
+            <h3>Bài giảng</h3>
+            <ul id="lecture-list">
+                <!-- Danh sách bài giảng sẽ được hiển thị ở đây -->
+            </ul>
+            <h3>Bài tập</h3>
+            <ul id="assignment-list">
+                <!-- Danh sách bài tập sẽ được hiển thị ở đây -->
+            </ul>
+            <h3>Tài liệu tham khảo</h3>
+            <ul id="reference-list">
+                <!-- Danh sách tài liệu tham khảo sẽ được hiển thị ở đây -->
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // Mô phỏng dữ liệu tài liệu cho mỗi môn học
+        const data = {
+            math101: {
+                lectures: ["Bài giảng 1.pdf", "Bài giảng 2.pdf"],
+                assignments: ["Bài tập 1.pdf", "Bài tập 2.pdf"],
+                references: ["Sách tham khảo A.pdf", "Tài liệu toán học.pdf"]
+            },
+            cs201: {
+                lectures: ["Bài giảng lập trình.pdf", "Bài giảng thuật toán.pdf"],
+                assignments: ["Bài tập 1.docx", "Bài tập 2.docx"],
+                references: ["Tài liệu máy tính.pdf", "Bài báo nghiên cứu.pdf"]
+            },
+            phys301: {
+                lectures: ["Bài giảng vật lý.pdf", "Lý thuyết sóng.pdf"],
+                assignments: ["Bài tập 1.pdf", "Bài tập về sóng.pdf"],
+                references: ["Tài liệu về sóng.pdf", "Sách vật lý hạt nhân.pdf"]
+            }
+        };
+
+        function loadFiles(course) {
+            const lectureList = document.getElementById("lecture-list");
+            const assignmentList = document.getElementById("assignment-list");
+            const referenceList = document.getElementById("reference-list");
+
+            // Xóa nội dung cũ
+            lectureList.innerHTML = '';
+            assignmentList.innerHTML = '';
+            referenceList.innerHTML = '';
+
+            // Nạp tài liệu theo môn học được chọn
+            if (data[course]) {
+                data[course].lectures.forEach(file => {
+                    lectureList.innerHTML += `<li><a href="#">${file}</a></li>`;
+                });
+                data[course].assignments.forEach(file => {
+                    assignmentList.innerHTML += `<li><a href="#">${file}</a></li>`;
+                });
+                data[course].references.forEach(file => {
+                    referenceList.innerHTML += `<li><a href="#">${file}</a></li>`;
+                });
+            }
+        }
+
+        // Tải dữ liệu của môn học đầu tiên khi trang được mở
+        document.addEventListener("DOMContentLoaded", () => {
+            loadFiles("math101");
+        });
+    </script>
+</body>
+</html>
