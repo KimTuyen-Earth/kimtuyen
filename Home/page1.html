@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng Hợp Môn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #039efd;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .navbar-left, .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-left a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 16px;
+        }
+
+        .navbar-left a:hover {
+            color: #f0a500;
+        }
+
+        .navbar-right a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .navbar-right .icon {
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .navbar-right .icon:hover {
+            color: #f0a500;
+        }
+
+        /* Main layout */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .content, .sidebar {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 2;
+            margin-right: 20px;
+        }
+
+        .content h2, .content p {
+            margin-bottom: 10px;
+        }
+
+        .video {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        /* Sidebar (Course Content) */
+        .sidebar {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .sidebar h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+
+        .section h4 {
+            cursor: pointer;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section h4:hover {
+            background-color: #ddd;
+        }
+
+        .section h4::after {
+            content: "+";
+            font-size: 18px;
+        }
+
+        .section.active h4::after {
+            content: "-";
+        }
+
+        .section ul {
+            list-style: rgba(236, 3, 3, 0.267);
+            padding: 10px;
+            display: none;
+            margin: 10px 50px 20px 0;;
+        }
+
+        .section ul li {
+            margin: 5px 0;
+        }
+
+        .section ul li a {
+            text-decoration: #9744;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .section ul li a:hover {
+            text-decoration: underline;
+            color: #007bff;
+        }
+
+        .section.active ul {
+            display: block;
+        }
+
+        .course-summary {
+            margin-top: 20px;
+        }
+
+        .course-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-summary ul li {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .course-summary ul li:before {
+            content: "✔";
+            color: #4CAF50;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="#">Home</a>
+            <span>Toán Lớp 1</span>
+        </div>
+
+        <div class="navbar-right">
+            <a href="#">Leave a rating</a>
+            <a href="#">Your progress</a>
+            <a href="#">Share</a>
+            <div class="icon">☰</div>
+        </div>
+    </div>
+
+    <!-- Main container for content and course outline -->
+    <div class="container">
+        <!-- Main Course Content -->
+        <div class="content">
+            <h2>Toán Lớp 1</h2>
+
+            <div class="video">
+                <!-- You can replace the iframe with your own video link -->
+                <iframe src="https://www.youtube.com/embed/8ul1OlYtc04?si=RB9txPo3q5gABaQf" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <p><strong>Integration:</strong> Toán lớp 1 – Phép trừ trong phạm vi 6. GV Trần Ngọc Huỳnh Thư - Trường Tiểu học Lê Lợi, thành phố Vĩnh Long.</p>
+            <p>Tải ứng dụng THVLi để xem nhiều hơn</p>
+            <p>Android: http://bit.ly/THVLi_Android
+                iOS: http://bit.ly/THVLi_iOS
+                hoặc xem trực tiếp trên http://thvli.vn</p>
+
+            <div class="course-summary">
+                <h2>SHARE và SUBSCRIBE các kênh YouTube của Đài Truyền Hình Vĩnh Long </h2>
+                <ul>
+                    <li>THVL Tổng Hợp:    / thvltonghop  </li>
+                    <li> THVL Giải Trí:    / thvlgiaitri  </li>
+                    <li>THVL Phim:    / thvlphim </li>
+                    <li>THVL Thiếu Nhi:    / thvlthieunhi </li>
+                    <li> THVL Ca Nhạc:    / thvlcanhac  </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar with Course Sections -->
+        <div class="sidebar">
+            <h3>Course Content</h3>
+            
+            <div class="section" onclick="toggleSection(this)">
+                <h4>Section 2: Toán</h4>
+                <ul>
+                    <li><a href="page1.html" target="_blank">Toán Lớp 1</a></li>
+                    <li><a href="page2.html" target="_blank">Toán Lớp 2</a></li>
+                </ul>
+            </div>
+    
+            <div class="section" onclick="toggleSection(this)">
+                <h4>Section 3: Tiếng Việt</h4>
+                <ul>
+                    <li><a href="page3.html" target="_blank">Tiếng Việt Lớp 1</a></li>
+                    <li><a href="page4.html" target="_blank">Tiếng Việt Lớp 2</a></li>
+                </ul>
+            </div>
+    
+            <div class="section" onclick="toggleSection(this)">
+                <h4>Section 4: Thể Dục</h4>
+                <ul>
+                    <li><a href="page5.html" target="_blank">Thể Dục Lớp 1</a></li>
+                    <li><a href="page6.html" target="_blank">Thể Dục Lớp 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(section) {
+            section.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
