@@ -1,0 +1,217 @@
+body {
+  font-family:Arial,sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+.tabs {
+  font-family: Fantasy;
+  font-size: 20px;
+  display: flex;
+  gap: 15px;
+  background-color: #333;
+}
+.container h1{
+  font-family: Fantasy;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  text-size-adjust: 20px;
+  font-size: 60px;
+}
+.container a{
+  color: cornflowerblue;
+}
+.tabs a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.tabs a:hover, .tabs a.active {
+  background-color: #0056b3;
+}
+
+.tab-content.active {
+  display: block;
+}
+.container {
+  display: block;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  text-align: left;
+  padding: 0.5em;
+  background-color: #333;
+}
+
+/* Certification Section Styling */
+.certification-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certification-section h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+.certification-section h3 {
+  color: #333;
+}
+
+
+.certification-section p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.certification-section .explore-btn {
+  background-color: #6c63ff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.certification-section .explore-btn:hover {
+  background-color: #5a54d1;
+}
+
+
+/* Certification Cards Styling */
+.certification-cards {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  flex-wrap: wrap;
+  border-radius: grid;
+  width: 300%;
+  
+
+}
+.cert-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 80%;
+  margin-right: 0;
+  border: #0056b3;
+}
+.cert-card {
+  border-radius: 5px;
+  background: #b2b2b2;
+  padding: 1em;
+  display: grid;
+
+}
+/*Archived*/
+.lesson-container1 {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  border-radius: grid;     
+}
+.explore-card{
+  width: 280px;
+  height: 320px;
+  border-radius: 8px;
+  display: grid;
+  text-align: center;
+  padding: 1em;
+  
+}
+.cert-card1 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 80%;
+  margin-right: 0;
+  border: #0056b3;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cert-card1 {
+  border-radius: 5px;
+  background: #b2b2b2;
+  padding: 1em;
+  display: grid;
+
+}
+/*Learning Tools*/
+.certification-section1{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;  
+  display: grid; 
+  width: 300%;
+  height: 20px;
+}
+.certification-section1 h2 {
+  font-size: 2em;
+  color: #333;
+  font-family: fantasy;
+}
+.cert-card2 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 80%;
+  margin-right: 0;
+  border: #0056b3;
+  margin-left: auto;
+}
+
+.certification-section1 p {
+  color: #666;
+  margin-bottom: 10px;
+  width: 300%;
+  flex-wrap: wrap;
+}
+.cert-card2 h2{
+  font-family: Arial;
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.cert-card2 h3 {
+  font-family: Arial;
+  font-weight: normal;
+    color: #333;
+
+}
+.cert-card2 h4 {
+  font-family: Arial;
+  margin: 4px 0;
+    font-size: 14px;
+    color: #666;
+}
+.explore-card1{
+  display: grid;
+  gap: 10px 20px;
+  margin: 10px;
+  flex-wrap: wrap;
+  border-radius: grid;
+  width: 10%;
+}
+.cert-card2{
+    border-radius: 8px;
+    padding: 16px;
+    display: table-row;;
+    align-items: flex-start;
+    background-color: #ffffff;
+    max-width: 500px;
+
+}
+.A {
+  background-color: #b4b2b2;
+  color: #2e2e2e;
+  margin-right: auto;
+}
+
