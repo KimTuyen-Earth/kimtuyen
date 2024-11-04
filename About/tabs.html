@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css" >
+</head>
+<body>
+    <header>
+        <h1>Chào Mừng Đến Với Trang Chủ</h1>
+    </header>
+    <nav>
+        <a href ="home.html" onclick="showContent('Home')">Home</a>
+        <a href ="about.html" onclick="showContent('About')">About</a>
+        <a href ="tabs.html" onclick="showContent('Tabs')">Tabs</a>
+    </nav>
+
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">Tab 1</a></li>
+            <li><a href="#tab2">Tab 2</a></li>
+            <li><a href="#tab3">Tab 3</a></li>
+        </ul>  
+    </div>
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+            <h2>Nội dung Tab 1</h2>
+            <p>Đây là nội dung của Tab 1.</p>
+        </div>
+        <div id="tab2" class="tab">
+            <h2>Nội dung Tab 2</h2>
+            <p>Đây là nội dung của Tab 2.</p>
+        </div>
+        <div id="tab3" class="tab">
+            <h2>Nội dung Tab 3</h2>
+            <p>Đây là nội dung của Tab 3.</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
